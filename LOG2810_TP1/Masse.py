@@ -1,3 +1,4 @@
+
 class Masse(object):
     """
     Classe Masse
@@ -8,10 +9,10 @@ class Masse(object):
     mB = 3   # Masse des objets de type B
     mC = 6   # Masse des objets de type C
 
-
-    def masse(self, nA, nB, nC) : 
+    @staticmethod
+    def masse(nA, nB, nC) : 
         """
-        Fonction masse
+        Fonction statique masse
 
         Calcule la masse d'une distribution d'objets
 
@@ -22,8 +23,6 @@ class Masse(object):
 
         """
         return self.mA * nA + self.mB * nB + self.mC * nC
-
-
 
 
 

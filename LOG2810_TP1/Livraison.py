@@ -1,23 +1,25 @@
-class Livraison(object):
+class Ceuillete(object):
     """
-    Classe L
+    Classe Livraison
 
-    Classe qui représente une commande de l'utilisateur
+    Classe qui représente une ceuillete d'un robot.
+    Une ceuillette est défini comme étant le nombre d'objects 
+    de chaque type receuilli à un certain noeud donné
+    
     """
 
-    def __init__(self, idNoeudDest, nA, nB, nC) :
+    def __init__(self, noeud, nA, nB, nC) :
         """
         Constructueur
-        param   idNoeudDest :    Le numero du noeud de destination
-        param   nA :             Le nombre d'objet de type A
-        param   nB :             Le nombre d'objet de type B
-        param   nC :             Le nombre d'objet de type C
+        param  noeud  :    Le noeud auquel se fait la ceuillete
+        param    nA   :    Le nombre d'objet de type A
+        param    nB   :    Le nombre d'objet de type B
+        param    nC   :    Le nombre d'objet de type C
 
         """
-        self.idNoeudDest = idNoeudDest
-        self.nA          = nA
-        self.nB          = nB
-        self.nC          = nC
-
+        self.noeud    = noeud
+        self.nA       = nA
+        self.nB       = nB
+        self.nC       = nC
 
 

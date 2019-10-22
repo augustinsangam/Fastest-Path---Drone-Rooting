@@ -3,6 +3,8 @@ class Noeud(object):
     Classe Noeud
 
     Classe qui représente un noeud
+    Un noeud est caractérisé par un identifiant entier et
+    un stock d'objets de chaque type
     """
 
     def __init__(self, id, nA, nB, nC) :

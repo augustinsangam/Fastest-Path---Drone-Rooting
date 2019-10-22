@@ -24,6 +24,9 @@
     <Compile Include="Chemin.py">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="GestionnaireRobots.py">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Commande.py">
       <SubType>Code</SubType>
     </Compile>
