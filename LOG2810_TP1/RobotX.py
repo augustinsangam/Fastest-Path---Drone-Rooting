@@ -7,8 +7,9 @@ class RobotX(Robot):
     Classe qui modélise un robot de type X
     """
 
-    poidsMax = 5 # Poids maximal en Kg
-
+    def __init__(self) :
+        """Constructeur"""
+        super.__init__(5)   # poidsMax = 5 ; Poids maximal en Kg
 
     def k(self, masse) :
         """ 

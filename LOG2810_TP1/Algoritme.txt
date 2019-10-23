@@ -1,0 +1,47 @@
+
+
+Algorithme pour trouver le chemin le plus rapide
+
+Idée :
+
+Pour chaque robot
+|   |
+|   On part du point 0 et on revient au point 0. Il vaut toujours mieux prendre les 
+|   colis au retour, car plus le robot pèse, moins il va vite. 
+|   |
+|   Au début, la recolte est donc juste le noeud 0.
+|   Et on sait que tous les objets n'ont pas encore été recoltés
+|   |
+|   Tant que la commande n'as pas encore été traitée
+|   |
+|   |   On chosit la recolte ayant le plus petit temps dans la liste des recoltes memorisées et non traitées
+|   |   |   
+|   |   |   Si on n'en trouve pas, cela veut dire qu'il n'y a pas de chemins possibles
+|   |   |
+|   |   A chaque bout cette recolte, 
+|   |   |
+|   |   |   on génère, toutes les combinaisons possibles
+|   |   |   de ceuilletes qui sont voisines au dernier noeud de la recolte. 
+|   |   |   Ceci agrandit donc notre recolte.
+|   |   |
+|   |   |   Pour chaque nouvelle combinaison (nouvelle recolte)
+|   |   |   |
+|   |   |   |   Si on n'avait jamais croisé cette nouvelle recolte, on la mémorise et on suppose qu'elle 
+|   |   |   |   n'est pas encore traitée.
+|   |   |   |
+|   |   |   |   Si jamais on avait déja une récolte qui passe par les mêmes points
+|   |   |   |       On regade celle qui a le meilleur temps
+|   |   |   |   
+|   |   |   |   Si non, on l'oublie. (ca nous sauve beaucoup de temps)
+|   |   |
+|   |   Après tout ce processus, on peut assumer que la recolte sur laquelle on a fait 
+|   |   toutes ses modifications a été traitée.
+|   |   |
+|   |   Si cette recolte commence par le noeud 0 et se termine par ce même noeud,
+|   |   et que le stock a été ramassé
+|   |   |   
+|   |   |   On peut s'arrêter la. On a trouvé ce qu'on cherche. (on a tout rammassé)
+|   |   |   On enregistre ce temps, comme le meilleur temps pour ce robot
+|   |   |   
+
+On choisi le robot ayant le meilleur temps. (Et evidemment le parcours qui lui est associé)

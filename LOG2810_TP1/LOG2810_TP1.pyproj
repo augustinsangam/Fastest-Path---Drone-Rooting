@@ -33,7 +33,7 @@
     <Compile Include="Entrepot.py">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="Livraison.py">
+    <Compile Include="Ceuillete.py">
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="Noeud.py">

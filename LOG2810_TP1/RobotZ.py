@@ -8,7 +8,9 @@ class RobotZ(Robot):
     Classe qui modélise un robot de type Z
     """
 
-    poidsMax = 25 # Poids maximal en Kg
+    def __init__(self) :
+        """Constructeur"""
+        super.__init__(25)   # poidsMax = 25 ; Poids maximal en Kg
 
 
     def k(self, masse) :

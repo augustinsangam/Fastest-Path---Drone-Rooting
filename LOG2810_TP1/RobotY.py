@@ -7,7 +7,9 @@ class RobotY(Robot):
     Classe qui modélise un robot de type Y
     """
 
-    poidsMax = 10 # Poids maximal en Kg
+    def __init__(self) :
+        """Constructeur"""
+        super.__init__(10)   # poidsMax = 10 ; Poids maximal en Kg
 
 
     def k(self, masse) :

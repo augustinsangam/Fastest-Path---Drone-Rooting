@@ -1,4 +1,9 @@
+"""
+Classe Masse
 
+Modélise les masses.
+
+"""
 class Masse(object):
     """
     Classe Masse

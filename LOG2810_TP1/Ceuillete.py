@@ -1,6 +1,7 @@
+
 class Ceuillete(object):
     """
-    Classe Livraison
+    Classe Ceuillete
 
     Classe qui représente une ceuillete d'un robot.
     Une ceuillette est défini comme étant le nombre d'objects 
