@@ -1,4 +1,5 @@
 from Entrepot import Entrepot
+from Interface import Interface
 from Robot import Robot
 from RobotX import RobotX
 from RobotY import RobotY
@@ -6,8 +7,9 @@ from RobotZ import RobotZ
 from Recolte import Recolte
 from Ceuillete import Ceuillete
 from GestionnaireRobots import GestionnaireRobots
+from Commande import Commande
 
-if __name__ == "__main__" :
+def test():
     entrepot = Entrepot()
     recolte = Recolte()
 
@@ -20,28 +22,36 @@ if __name__ == "__main__" :
     print(RobotZ().tempsNecessaire(recolte))
 
     print('Les robots ')
-    for robot in GestionnaireRobots.tousLesRobots :
+    for robot in GestionnaireRobots.tousLesRobots:
         print(robot)
-    
+
     print('Les robots possibles pour 1 kg ')
-    for robot in GestionnaireRobots.robotsPossibles(1, 0, 0) :
+    for robot in GestionnaireRobots.robotsPossibles(1, 0, 0):
         print(robot)
-    
+
     print('Les robots possibles pour 6 kg ')
-    for robot in GestionnaireRobots.robotsPossibles(0, 0, 1) :
+    for robot in GestionnaireRobots.robotsPossibles(0, 0, 1):
         print(robot)
-    
+
     print('Les robots possibles pour 11 kg ')
-    for robot in GestionnaireRobots.robotsPossibles(2, 3, 0) :
+    for robot in GestionnaireRobots.robotsPossibles(2, 3, 0):
         print(robot)
-    
+
     print('Les robots possibles pour 20 kg ')
-    for robot in GestionnaireRobots.robotsPossibles(2, 0, 3) :
+    for robot in GestionnaireRobots.robotsPossibles(2, 0, 3):
         print(robot)
-        
-    
+
     print('Les robots possibles pour 30 kg ')
-    for robot in GestionnaireRobots.robotsPossibles(0, 0, 5) :
+    for robot in GestionnaireRobots.robotsPossibles(0, 0, 5):
         print(robot)
+
+if __name__ == "__main__" :
+    commande= Commande()
+    programmeFermer=False
+    interface=Interface(commande)
+
+    while not programmeFermer:
+        programmeFermer=interface.demarrer()
+
 
         
