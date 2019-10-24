@@ -9,16 +9,23 @@ class Entrepot(object):
     Un entrepôt n'est rien d'autre qu'une liste de noeuds reliés dans un graphe
 
     """
+    instance = None       # Attribut statique de classe
 
+    def __new__(cls): 
+        """
+        Méthode de construction standard en Python
+        Elle suit l'implémentation d'une classe Singleton comme défini ici :
+        https://fr.wikipedia.org/wiki/Singleton_(patron_de_conception)#Python
+        """
 
-    def __init__(self):
-        """Contructueur"""
-        self.noeuds         = []    # La liste des noeuds du grape
-        self.graphe         = None  # Le graphe asscocié à l'entrepôt. Il s'agit d'un graphe valué
-                                    # Il est censé être une map<Noeud, set<NoueudIncident, Distance>>
+        if cls.instance is None:
+            cls.instance        = object.__new__(cls)
+            cls.instance.noeuds = []            # La liste des noeuds du grape
+            cls.instance.grape  = None          # Le graphe asscocié à l'entrepôt. Il s'agit d'un graphe valué
+                                                # Il est censé être une map<Noeud, set<NoueudIncident, Distance>>
+            cls.instance.lireFichier("entrepot.txt")
 
-        self.lireFichier("entrepot.txt")
-
+        return cls.instance
 
 
     def lireFichier(self, nomFichier) :
