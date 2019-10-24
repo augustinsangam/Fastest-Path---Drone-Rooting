@@ -10,7 +10,7 @@ class RobotZ(Robot):
 
     def __init__(self) :
         """Constructeur"""
-        super.__init__(25)   # poidsMax = 25 ; Poids maximal en Kg
+        super().__init__(25)   # poidsMax = 25 ; Poids maximal en Kg
 
 
     def k(self, masse) :

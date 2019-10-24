@@ -27,7 +27,7 @@ class Masse(object):
         return      La masse de la distribution 
 
         """
-        return self.mA * nA + self.mB * nB + self.mC * nC
+        return Masse.mA * nA + Masse.mB * nB + Masse.mC * nC
 
 
 

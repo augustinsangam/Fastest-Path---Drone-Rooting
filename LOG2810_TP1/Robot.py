@@ -22,12 +22,12 @@ class Robot(ABC):
     def peutTransporter(self, masse) :
         pass
 
-    def tempsNecessaire(self, Recolte) :
+    def tempsNecessaire(self, recolte) :
         temps = 0
         masse = 0
-        for i in range(len(Recolte) - 1) :
-            temps += distanceEntre(Recolte[i], Recolte[i+1]) * self.k(masse)
-            masse += Masse.masse(Recolte[i+1].nA, Recolte[i+1].nB, Recolte[i+1].nC)
+        for i in range(len(recolte) - 1) :
+            temps += Entrepot().distanceEntre(recolte[i].noeud, recolte[i+1].noeud) * self.k(masse)
+            masse += Masse.masse(recolte[i+1].nA, recolte[i+1].nB, recolte[i+1].nC)
         
         return temps
 

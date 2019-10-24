@@ -9,7 +9,7 @@ class RobotX(Robot):
 
     def __init__(self) :
         """Constructeur"""
-        super.__init__(5)   # poidsMax = 5 ; Poids maximal en Kg
+        super().__init__(5)   # poidsMax = 5 ; Poids maximal en Kg
 
     def k(self, masse) :
         """ 

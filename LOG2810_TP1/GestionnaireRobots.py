@@ -2,6 +2,8 @@ from RobotX import RobotX
 from RobotY import RobotY
 from RobotZ import RobotZ
 
+from Masse import Masse
+
 class GestionnaireRobots(object):
     """
     Classe GestionnaireRobots
@@ -12,7 +14,7 @@ class GestionnaireRobots(object):
     tousLesRobots = {RobotX(), RobotY(), RobotZ()} 
     
     @staticmethod
-    def robotsPossible(nA, nB, nC) :
+    def robotsPossibles(nA, nB, nC) :
         """
         Méthode statique robotsPossible(nA, nB, nC)
 
@@ -27,7 +29,7 @@ class GestionnaireRobots(object):
 
         for robot in GestionnaireRobots.tousLesRobots : # On parcours tous les robots
             if robot.peutTransporter(masseDesObjets) :
-                robotsPossible.add(robot)
+                robotsPossibles.add(robot)
 
         return robotsPossibles
 
