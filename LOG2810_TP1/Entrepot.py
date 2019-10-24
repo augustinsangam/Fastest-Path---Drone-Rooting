@@ -21,7 +21,7 @@ class Entrepot(object):
         if cls.instance is None:
             cls.instance        = object.__new__(cls)
             cls.instance.noeuds = []            # La liste des noeuds du grape
-            cls.instance.grape  = None          # Le graphe asscocié à l'entrepôt. Il s'agit d'un graphe valué
+            cls.instance.graphe = None          # Le graphe asscocié à l'entrepôt. Il s'agit d'un graphe valué
                                                 # Il est censé être une map<Noeud, set<NoueudIncident, Distance>>
             cls.instance.lireFichier("entrepot.txt")
 
@@ -70,7 +70,6 @@ class Entrepot(object):
 
 
 
-
     def lireGraphe(self, lignes) :
         """
         Méthode lireGraphe(lignes)
@@ -91,6 +90,30 @@ class Entrepot(object):
 
 
 
+    def distanceEntre(self, noeud1, noeud2) :
+        """
+        Méthode distanceEntre(noeud1, noeud2)
+
+        Permet de trouver la distance entre deux noeuds.
+        Elle est programmée pour ne marcher que sur des noeuds adjacents
+
+        param   noeud1  :   Un noeud
+        param   noued2  :   L'autre noeud
+
+        Renvoie une exception de type "NotAdjancedNodeException" si les noeuds ne sont
+        pas adjencents.
+        """
+
+        if noeud1 == noeud2 :
+            return 0
+
+        for noeud, distance in self.graphe[noeud1] :
+            if noeud == noeud2 :
+                return distance
+
+        raise Exception("NoeudsPasAdjacentsException")
+
+
 
     def afficher(self) :
         """
@@ -106,6 +129,5 @@ class Entrepot(object):
             print(noeudsIncidents[:-3], end='')
             print(')')
 
-    
 
 

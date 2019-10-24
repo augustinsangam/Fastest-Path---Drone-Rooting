@@ -2,6 +2,7 @@ from abc import ABC
 from abc import abstractmethod
 
 from Masse import Masse
+from Entrepot import Entrepot
 
 class Robot(ABC):
     """
@@ -30,6 +31,4 @@ class Robot(ABC):
         
         return temps
 
-    def distanceEntre(self, ceuillette, ceuillette) :
-        pass
            
