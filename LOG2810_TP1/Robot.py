@@ -30,4 +30,6 @@ class Robot(ABC):
         
         return temps
 
+    def distanceEntre(self, ceuillette, ceuillette) :
+        pass
            

@@ -1,5 +1,4 @@
 
-
 Algorithme pour trouver le chemin le plus rapide
 
 Idée :
@@ -28,10 +27,10 @@ Pour chaque robot
 |   |   |   |
 |   |   |   |   Si on n'avait jamais croisé cette nouvelle recolte, on la mémorise et on suppose qu'elle 
 |   |   |   |   n'est pas encore traitée.
-|   |   |   |
+|   |   |   |   |
 |   |   |   |   Si jamais on avait déja une récolte qui passe par les mêmes points
 |   |   |   |       On regade celle qui a le meilleur temps
-|   |   |   |   
+|   |   |   |   |
 |   |   |   |   Si non, on l'oublie. (ca nous sauve beaucoup de temps)
 |   |   |
 |   |   Après tout ce processus, on peut assumer que la recolte sur laquelle on a fait 
