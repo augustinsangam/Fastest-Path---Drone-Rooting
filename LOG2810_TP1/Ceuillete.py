@@ -23,4 +23,12 @@ class Ceuillete(object):
         self.nB       = nB
         self.nC       = nC
 
+    @staticmethod
+    def freeze(ceuillete) :
+        return (ceuillete.noeud, ceuillete.nA, ceuillete.nB, ceuillete.nC)
+
+    @staticmethod
+    def unfreeze(ceuillete) :
+        return Ceuillete(ceuillete[0], ceuillete[1], ceuillete[2], ceuillete[3])
+
 

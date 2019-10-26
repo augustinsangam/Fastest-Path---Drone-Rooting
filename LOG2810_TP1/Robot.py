@@ -11,8 +11,14 @@ class Robot(ABC):
     Classe qui modélise un robot comme un object abstrait
     """
 
+    tempsDeRamassageUnObjet = 10
+
     def __init__(self, poidsMax) :
         self.poidsMax = poidsMax
+
+    @abstractmethod
+    def nom(self) :
+        pass
 
     @abstractmethod
     def k(self, masse) :
@@ -22,13 +28,7 @@ class Robot(ABC):
     def peutTransporter(self, masse) :
         pass
 
-    def tempsNecessaire(self, recolte) :
-        temps = 0
-        masse = 0
-        for i in range(len(recolte) - 1) :
-            temps += Entrepot().distanceEntre(recolte[i].noeud, recolte[i+1].noeud) * self.k(masse)
-            masse += Masse.masse(recolte[i+1].nA, recolte[i+1].nB, recolte[i+1].nC)
-        
-        return temps
+    def tempsNecessaire(self, masse, noeudDepart, noeudArrivee, nObjets) :
+        return Entrepot().distanceEntre(noeudDepart, noeudArrivee) * self.k(masse) + Robot.tempsDeRamassageUnObjet * nObjets
 
            

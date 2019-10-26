@@ -11,6 +11,10 @@ class RobotX(Robot):
         """Constructeur"""
         super().__init__(5)   # poidsMax = 5 ; Poids maximal en Kg
 
+    def nom(self) :
+        return "Robot X"
+
+
     def k(self, masse) :
         """ 
         Fonction qui calcule la caractéristique associée au robot X
