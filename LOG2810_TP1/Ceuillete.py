@@ -31,4 +31,14 @@ class Ceuillete(object):
     def unfreeze(ceuillete) :
         return Ceuillete(ceuillete[0], ceuillete[1], ceuillete[2], ceuillete[3])
 
+    def afficherLeNombreDObjetCeuillis(self):
+        texteNombreObjetCeuillis=""
 
+        if(self.nA!=0):
+            texteNombreObjetCeuillis+= str(self.nA) + " objet A ceuillis, "
+        if (self.nB != 0):
+            texteNombreObjetCeuillis += str(self.nB) + " objet B ceuillis, "
+        if (self.nC != 0):
+            texteNombreObjetCeuillis += str(self.nC) + " objet C ceuillis, "
+
+        return texteNombreObjetCeuillis[:-2]

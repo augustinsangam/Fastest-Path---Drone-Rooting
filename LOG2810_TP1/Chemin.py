@@ -2,6 +2,8 @@ from    GestionnaireRobots  import GestionnaireRobots
 from    Entrepot            import Entrepot
 from    Ceuillete           import Ceuillete
 from    Recolte             import Recolte
+from    PasDeRobotsPossibleError            import PasDeRobotsPossiblesError
+from    CommandeImpossibleError            import CommandeImpossibleError
 from    Masse               import Masse
 
 
@@ -27,7 +29,7 @@ class Chemin(object):
         robotsPossibles         = GestionnaireRobots.robotsPossibles(nA, nB, nC)
 
         if len(robotsPossibles) == 0 :
-            raise Exception('PasDeRobotsPossiblesError')
+            raise PasDeRobotsPossiblesError('PasDeRobotsPossiblesError')
 
         for robot in robotsPossibles :
             statitistiquesRobot = Chemin.djikstraModifie(robot, nA, nB, nC)
@@ -75,7 +77,7 @@ class Chemin(object):
             # Si on en trouve pas, c'est qu'on ne peut pas completer la 
             # commande
             if plusPetitTemps == float('inf') :
-                raise Exception('CommandeImpossibleError')
+                raise CommandeImpossibleError('CommandeImpossibleError')
 
             ###Debug
 

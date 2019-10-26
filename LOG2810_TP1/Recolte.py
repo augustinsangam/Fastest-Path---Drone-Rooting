@@ -39,12 +39,11 @@ class Recolte() :
         rammassageComplete = (self.nA == nA and self.nB == nB and self.nC == nC)
         noeud0 = Entrepot().noeuds[0]
         cheminValide = (self.ceuilletes[0].noeud == noeud0) and (self.ceuilletes[-1].noeud == noeud0)
-        
         return rammassageComplete and cheminValide and (len(self.ceuilletes) > 1)
 
-
-    def __repr__(self) :
-        recolte = ''
-        for ceuillete in self.ceuilletes :
-            recolte += '{} | {} {} {} ---> '.format(ceuillete.noeud.id, ceuillete.nA, ceuillete.nB, ceuillete.nC)
-        return recolte[:-5]
+    #
+    # def __repr__(self) :
+    #     recolte = ''
+    #     for ceuillete in self.ceuilletes:
+    #         recolte += '{} | {} {} {} ---> '.format(ceuillete.noeud.id, ceuillete.nA, ceuillete.nB, ceuillete.nC)
+    #     return recolte[:-5]
