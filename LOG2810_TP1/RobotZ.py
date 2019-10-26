@@ -13,6 +13,10 @@ class RobotZ(Robot):
         super().__init__(25)   # poidsMax = 25 ; Poids maximal en Kg
 
 
+    def nom(self) :
+        return "Robot Y"
+
+
     def k(self, masse) :
         """ 
         Fonction qui calcule la caractéristique associée au robot Z

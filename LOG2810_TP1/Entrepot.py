@@ -23,7 +23,7 @@ class Entrepot(object):
             cls.instance.noeuds = []            # La liste des noeuds du grape
             cls.instance.graphe = None          # Le graphe asscocié à l'entrepôt. Il s'agit d'un graphe valué
                                                 # Il est censé être une map<Noeud, set<NoueudIncident, Distance>>
-            cls.instance.lireFichier("entrepot.txt")
+            cls.instance.lireFichier("LOG2810_TP1/entrepot.txt")
 
         return cls.instance
 
