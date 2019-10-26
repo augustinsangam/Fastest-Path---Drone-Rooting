@@ -23,7 +23,7 @@ class Entrepot(object):
             cls.instance.noeuds = []            # La liste des noeuds du grape
             cls.instance.graphe = None          # Le graphe asscocié à l'entrepôt. Il s'agit d'un graphe valué
                                                 # Il est censé être une map<Noeud, set<NoueudIncident, Distance>>
-            cls.instance.lireFichier("entrepot.txt")
+            cls.instance.lireFichier("LOG2810_TP1/entrepot.txt")
 
         return cls.instance
 
@@ -121,13 +121,30 @@ class Entrepot(object):
 
         Permet d'afficher l'entrepôt selon la méthode demandée par l'ennoncé du TP
         """
-        for noeud in self.noeuds :
-            print('(Noeud {:>2} , {} , {} , {} , ('.format(noeud.id, noeud.nA, noeud.nB, noeud.nC), end='')
+
+
+        #methode quand on utilise la console pour le output
+        # for noeud in self.noeuds :
+        #
+        #     print('(Noeud {:>2} , {} , {} , {} , ('.format(noeud.id, noeud.nA, noeud.nB, noeud.nC), end='')
+        #     noeudsIncidents = ''
+        #     for noeudIncident, distance in self.graphe[noeud] :
+        #         noeudsIncidents += '(Noeud {:>2}, {:>2}) , '.format(noeudIncident.id, distance)
+        #     print(noeudsIncidents[:-3], end='')
+        #     print(')')
+
+        listeTexte = []
+        for noeud in self.noeuds:
+            texteNoeud = '(Noeud {:>2}, {:>2}, {:>2}, {:>2}, ('.format(noeud.id, noeud.nA, noeud.nB, noeud.nC)
             noeudsIncidents = ''
-            for noeudIncident, distance in self.graphe[noeud] :
-                noeudsIncidents += '(Noeud {:>2}, {:>2}) , '.format(noeudIncident.id, distance) 
-            print(noeudsIncidents[:-3], end='')
-            print(')')
+            for noeudIncident, distance in self.graphe[noeud]:
+                noeudsIncidents += '(Noeud {:>2}, {:>2}) , '.format(noeudIncident.id, distance)
+            texteNoeud += noeudsIncidents[:-3] + ')'
+            texteNoeud.replace(" ", "  ")
+            listeTexte.append(texteNoeud)
+        print(listeTexte)
+
+        return listeTexte
 
 
 

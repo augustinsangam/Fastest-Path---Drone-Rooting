@@ -18,13 +18,14 @@ class Commande(object):
         self.nA          = nA
         self.nB          = nB
         self.nC          = nC
+        self.commandeEstVide= self.nA is 0 and self.nB is 0 and self.nC is 0
 
 
     def afficherCommande(self):
-        if(self.nA is 0 and self.nB is 0 and self.nC is 0):
-            print("Aucune commande n'a encore été passée")
+        if(self.commandeEstVide):
+            return "Aucune commande n'a encore été passée"
         else:
-            print("""Vous avez commander:\n  {} colis de type A\n  {} colis de type B\n  {} colis de type C
+            return ("""Vous avez commander:\n  {>2} colis de type A\n  {>2} colis de type B\n  {>2} colis de type C
             """.format(self.nA,self.nB,self.nC))
 
 

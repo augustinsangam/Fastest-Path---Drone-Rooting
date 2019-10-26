@@ -1,5 +1,4 @@
 from Entrepot import Entrepot
-from Interface import Interface
 from Robot import Robot
 from RobotX import RobotX
 from RobotY import RobotY
@@ -8,6 +7,10 @@ from Recolte import Recolte
 from Ceuillete import Ceuillete
 from GestionnaireRobots import GestionnaireRobots
 from Commande import Commande
+from Interface import Interface
+import tkinter
+
+
 
 def test():
     entrepot = Entrepot()
@@ -47,11 +50,10 @@ def test():
 
 if __name__ == "__main__" :
     commande= Commande()
-    programmeFermer=False
     interface=Interface(commande)
+    interface.mainloop()
+    interface.destroy()
 
-    while not programmeFermer:
-        programmeFermer=interface.demarrer()
 
 
         
